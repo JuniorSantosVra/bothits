@@ -6,7 +6,7 @@ var cron = require('node-cron')
 var app = express()
 
 
-cron.schedule('* * * * *', function(){
+cron.schedule('* 18 12 1-31 1-5', function(){
   console.log('running a task every minute');
 });
 
