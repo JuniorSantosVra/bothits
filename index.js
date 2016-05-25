@@ -1,6 +1,5 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var CronJob = require('cron').CronJob;
 var http = require('http')
 var request = require('request')
 var app = express()
@@ -26,7 +25,7 @@ app.get('/webhook/', function (req, res) {
 })
 
 
-new CronJob('00 50 00 * * 1-5', auto() , null, true, 'America/Sao_Paulo');
+// new CronJob('00 50 00 * * 1-5', auto() , null, true, 'America/Sao_Paulo');
 
 
 function verifica(user, categ){
@@ -100,30 +99,30 @@ function sendTextMessage(sender, text) {
 }
 
 
-function auto(){
-			 var options = {
-			     url: 'http://apphits.com.br/lista',
-			     port: app.get('port'),
-			     method: 'GET',
-			     json:true
-			 }
+// function auto(){
+// 			 var options = {
+// 			     url: 'http://apphits.com.br/lista',
+// 			     port: app.get('port'),
+// 			     method: 'GET',
+// 			     json:true
+// 			 }
 
-			 request(options, function(error, response, body){
+// 			 request(options, function(error, response, body){
 
-			    total = body.lista.length
+// 			    total = body.lista.length
 
-				for (i = 0; i < total; i++) { 
+// 				for (i = 0; i < total; i++) { 
 
 				     
-				    sendto = body.lista[i].sendto;
-				    categ = body.lista[i].categ;
+// 				    sendto = body.lista[i].sendto;
+// 				    categ = body.lista[i].categ;
 
-				    sendGenericMessage(sendto, categ)
-				}
+// 				    sendGenericMessage(sendto, categ)
+// 				}
 
-			 });		 
+// 			 });		 
 
-}
+// }
 
 
 function sendGenericMessage(sender, categoria) {
