@@ -2,7 +2,13 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var http = require('http')
 var request = require('request')
+var cron = require('node-cron')
 var app = express()
+
+
+cron.schedule('* * * * *', function(){
+  console.log('running a task every minute');
+});
 
 app.set('port', (process.env.PORT || 5000))
 // parse application/x-www-form-urlencoded
