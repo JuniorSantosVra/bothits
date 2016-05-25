@@ -7,7 +7,7 @@ var app = express()
 
 
 cron.schedule('* * * * *', function(){
-  console.log('running a task every minute');
+  auto()
 });
 
 app.set('port', (process.env.PORT || 5000))
@@ -105,30 +105,30 @@ function sendTextMessage(sender, text) {
 }
 
 
-// function auto(){
-// 			 var options = {
-// 			     url: 'http://apphits.com.br/lista',
-// 			     port: app.get('port'),
-// 			     method: 'GET',
-// 			     json:true
-// 			 }
+ function auto(){
+ 			 var options = {
+ 			     url: 'http://apphits.com.br/lista',
+ 			     port: app.get('port'),
+ 			     method: 'GET',
+ 			     json:true
+ 			 }
 
-// 			 request(options, function(error, response, body){
+ 			 request(options, function(error, response, body){
 
-// 			    total = body.lista.length
+ 			    total = body.lista.length
 
-// 				for (i = 0; i < total; i++) { 
+ 				for (i = 0; i < total; i++) { 
 
 				     
-// 				    sendto = body.lista[i].sendto;
-// 				    categ = body.lista[i].categ;
+ 				    sendto = body.lista[i].sendto;
+ 				    categ = body.lista[i].categ;
 
-// 				    sendGenericMessage(sendto, categ)
-// 				}
+ 				    sendGenericMessage(sendto, categ)
+ 				}
 
-// 			 });		 
+ 			 });		 
 
-// }
+ }
 
 
 function sendGenericMessage(sender, categoria) {
