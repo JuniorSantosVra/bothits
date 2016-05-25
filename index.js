@@ -63,7 +63,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 
-			auto()			
+				
 			sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
 		}
 		if (event.postback) {
@@ -75,7 +75,7 @@ app.post('/webhook/', function (req, res) {
 	res.sendStatus(200)
 })
 
-var token = "EAAL9j9wpSoUBALkHlMyfHAKweZAgupPjVrd3uZAnYTzkb3eL0ZAKbZA8ffWM92ZComzaYfFmqEZAMLE9cS5FZClqjGlcwpqQv5fIL20wIzspGW5Vdr7muZB9wRVS4kyRGvP0rDhqjw5SakgQFRq5JJnv8kkiDA0TZCFx4HvjnvpYeDAZDZD"
+var token = "EAAL9j9wpSoUBAMZB4CxsenV07hDRHUp0YXybpBoSm5c1kePsrJjxNwdhPLZAXYDCTZBg67QrB3AQP9IJ513pvQBZBDYLx2esPytUeVILlfV09VQnCa33UygffhfpQBAvHTdch3Gj5plpQFX6KCZBkS5MYC8ckt0vEgDCreFm0xAZDZD"
 
 function sendTextMessage(sender, text) {
 	messageData = {
